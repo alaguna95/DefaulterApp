@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: defaulterApp
+  data:
+    mongodb:
+      username: root
+      database: defaulterApp
+      password: example
+      port: '27017'
+      host: localhost

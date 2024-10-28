@@ -14,8 +14,27 @@ public final class UserExpense {
     
     private final Amount amount;
 
-    UserExpense(Id userId, Amount amount) {
+    private UserExpense(
+            Id userId, 
+            Amount amount) {
+        
         this.userId = userId;
         this.amount = amount;
     }
+    
+    public static UserExpense of(
+            Id userId,
+            Amount amount) {
+    
+        if(userId==null){
+            throw new IllegalArgumentException("userId cannot be null");
+        }
+        
+        if(amount==null){
+            throw new IllegalArgumentException("amount cannot be null");
+        }
+        
+        return new UserExpense(userId, amount);
+    }
+    
 }

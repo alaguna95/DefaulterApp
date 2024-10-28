@@ -15,7 +15,7 @@ public final class Participant {
     
     private final BigDecimal balance;
 
-    Participant(Id userId, BigDecimal totalExpense, BigDecimal balance) {
+    public Participant(Id userId, BigDecimal totalExpense, BigDecimal balance) {
         this.userId = userId;
         this.totalExpense = totalExpense;
         this.balance = balance;

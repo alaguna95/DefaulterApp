@@ -3,6 +3,7 @@ package com.galibox.defaulterApp.expense.repository;
 import com.galibox.defaulterApp.expense.domain.Name;
 import com.galibox.defaulterApp.expense.domain.UserExpense;
 import com.galibox.defaulterApp.shared.Amount;
+import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -11,6 +12,7 @@ import java.util.List;
 import java.util.UUID;
 
 @Document(collection = "expenses")
+@Data
 public class ExpenseEntity {
 
     @Id

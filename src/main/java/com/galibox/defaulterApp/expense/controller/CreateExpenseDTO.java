@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.UUID;
 
 @Data
-public class CreateExpenseDTO {
+class CreateExpenseDTO {
 
     private UUID id;
 
@@ -19,5 +19,5 @@ public class CreateExpenseDTO {
 
     private BigDecimal totalAmount;
 
-    private List<UserExpenseEntity> userExpenses;
+    private List<UserExpenseDTO> userExpenses;
 }

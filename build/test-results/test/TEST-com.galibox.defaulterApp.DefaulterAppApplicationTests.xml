@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.galibox.defaulterApp.DefaulterAppApplicationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-10-27T17:24:17" hostname="HL-PF4VD31T" time="1.549">
-  <properties/>
-  <testcase name="verify_module_architecture()" classname="com.galibox.defaulterApp.DefaulterAppApplicationTests" time="1.549"/>
-  <system-out><![CDATA[18:24:17.824 [Test worker] INFO com.tngtech.archunit.core.PluginLoader -- Detected Java version 17.0.8
-]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

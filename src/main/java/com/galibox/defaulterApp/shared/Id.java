@@ -8,14 +8,23 @@ import java.util.UUID;
 @Getter
 @EqualsAndHashCode
 public final class Id {
-    
-    private final UUID id;
-    
-    public Id(final UUID id) {
+
+    private final UUID value;
+
+    private Id(UUID value) {
+        this.value = value;
+    }
+
+    public static Id create() {
         
-        if(id == null) {
+        return new Id(UUID.randomUUID());
+    }
+
+    public static Id of(UUID value) {
+        
+        if (value == null) {
             throw new IllegalArgumentException("The id cannot be null");
         }
-        this.id = id;
+        return new Id(value);
     }
 }

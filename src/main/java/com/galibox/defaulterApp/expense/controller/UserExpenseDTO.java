@@ -1,20 +1,17 @@
 package com.galibox.defaulterApp.expense.controller;
 
 import com.galibox.defaulterApp.expense.repository.UserExpenseEntity;
+import lombok.Data;
+import lombok.Getter;
 
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.UUID;
 
-public class UserExpenseDTO {
+@Data
+class UserExpenseDTO {
 
-    private UUID id;
+    private UUID userId;
 
-    private  UUID groupId;
-
-    private  String name;
-
-    private BigDecimal totalAmount;
-
-    private List<UserExpenseDTO> userExpenses;
+    private BigDecimal amount;
 }

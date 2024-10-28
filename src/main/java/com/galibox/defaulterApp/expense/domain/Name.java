@@ -7,12 +7,16 @@ public final class Name {
     
       private final String value;
     
-      public Name(final String value) {
+      private Name(final String value) {
           
-          if(value == null) {
-              throw new IllegalArgumentException("Name cannot be null");
-          }
           this.value = value;
       }
-      
+
+    public static Name of(final String value) {
+          
+        if(value == null) {
+            throw new IllegalArgumentException("Name cannot be null");
+        }
+        return new Name(value);
+    }
 }

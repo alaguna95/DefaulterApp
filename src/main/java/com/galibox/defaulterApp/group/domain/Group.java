@@ -17,7 +17,7 @@ public final class Group {
 
     private final List<Defaulter> defaulters;
 
-    Group(Id id, String name, List<Participant> participants, List<Defaulter> defaulters) {
+    public Group(Id id, String name, List<Participant> participants, List<Defaulter> defaulters) {
         this.id = id;
         this.name = name;
         this.participants = participants;

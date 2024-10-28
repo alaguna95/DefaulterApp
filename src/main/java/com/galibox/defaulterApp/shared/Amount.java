@@ -6,10 +6,17 @@ import lombok.Getter;
 import java.math.BigDecimal;
 
 @Getter
-@EqualsAndHashCode(callSuper = false)
-public record Amount(BigDecimal value) {
+@EqualsAndHashCode
+public final class Amount {
 
-    public Amount {
+    private final BigDecimal value;
+    
+    private Amount (BigDecimal value) {
+       
+        this.value = value;
+    }
+
+    public static Amount of(BigDecimal value) {
 
         if (value == null) {
             throw new IllegalArgumentException("Amount value cannot be null");
@@ -18,11 +25,19 @@ public record Amount(BigDecimal value) {
         if (value.compareTo(BigDecimal.ZERO) <= 0) {
             throw new IllegalArgumentException("Amount value cannot be negative or zero");
         }
-
-    }
-
-    public Amount add(Amount amount) {
         
-        return new Amount(this.value.add(amount.value()));
+        return new Amount(value);
     }
+
+    public Amount add(Amount toAdd) {
+
+        if (toAdd == null) {
+            throw new IllegalArgumentException("toAdd value cannot be null");
+        }
+
+        return new Amount(value.add(toAdd.getValue()));
+    }
+    
+
+    
 }

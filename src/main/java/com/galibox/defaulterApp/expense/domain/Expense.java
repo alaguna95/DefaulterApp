@@ -4,12 +4,14 @@ import com.galibox.defaulterApp.group.domain.Group;
 import com.galibox.defaulterApp.shared.Amount;
 import com.galibox.defaulterApp.shared.Id;
 import lombok.AccessLevel;
+import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
 @RequiredArgsConstructor(access = AccessLevel.PRIVATE)
+@Getter
 public final class Expense {
     
     private final Id id;
@@ -85,7 +87,7 @@ public final class Expense {
             throw new IllegalArgumentException("The list of user expenses contains duplicates");
         }
 
-        if(userExpenses.stream().map(UserExpense::getAmount).reduce(Amount::add).get().equals(totalAmount)) {
+        if(!userExpenses.stream().map(UserExpense::getAmount).reduce(Amount::add).get().equals(totalAmount)) {
             throw new IllegalArgumentException("The sum of the user expenses is not equal to the total amount");
         }
 

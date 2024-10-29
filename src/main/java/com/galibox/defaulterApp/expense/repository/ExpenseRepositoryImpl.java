@@ -7,7 +7,6 @@ import com.galibox.defaulterApp.shared.Id;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
-import java.lang.reflect.Field;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -35,14 +34,14 @@ public class ExpenseRepositoryImpl implements ExpenseRepository {
     public Optional<Expense> get(final Id id) {
 
         return expenseJpaRepository.findExpenseById(id.getValue())
-                .map(expense -> EntityToDomainMapper.map(expense, Expense.class));
+                .map(expenseEntity -> (Expense)EntityToDomainMapper.map(expenseEntity,Expense.class));
     }
 
     @Override
     public List<Expense> search() {
 
         return expenseJpaRepository.findAll().stream()
-                .map(expense -> EntityToDomainMapper.map(expense, Expense.class))
+                .map(expenseEntity -> (Expense)EntityToDomainMapper.map(expenseEntity,Expense.class))
                 .toList();
     }
     

@@ -56,7 +56,7 @@ class ExpenseController {
 
     @RequestMapping(method = RequestMethod.PUT, value = "/{expenseId}")
     ResponseEntity<List<Expense>> updateExpense(
-            @RequestParam UUID expenseId, 
+            @PathVariable UUID expenseId, 
             @RequestBody UpdateExpenseDTO updateExpenseDTO) {
         
         updateExpense.update(
@@ -71,7 +71,7 @@ class ExpenseController {
     }
 
     @RequestMapping(method = RequestMethod.DELETE, value = "/{expenseId}")
-    ResponseEntity<List<Expense>> deleteExpense(@RequestParam UUID expenseId) {
+    ResponseEntity<List<Expense>> deleteExpense(@PathVariable UUID expenseId) {
 
         deleteExpense.delete(Id.of(expenseId));
         return ResponseEntity.noContent().build();
